@@ -53,6 +53,10 @@ An **industrial-grade binary classification system** designed to detect and clas
 - **Train/Test split:** 80/20 with stratification
 - **Vectorization:** TF-IDF with 50K vocabulary
 
+### 📊 Exploratory Data Analysis (EDA)
+
+![EDA Overview](outputs/EDA_overview.png)
+
 ---
 
 ## 🏭 What Makes This "Industrial-Grade"?
@@ -91,6 +95,8 @@ An **industrial-grade binary classification system** designed to detect and clas
 3. **Precision-Recall Curve** — Best model (Ensemble)
 4. **Confusion Matrix** — Best model predictions
 
+![Evaluation Dashboard](outputs/fake_news_detector.png)
+
 ### 🔴🟢 Feature Importance (Explainability)
 
 **Top 20 FAKE News Indicators:**
@@ -101,10 +107,14 @@ An **industrial-grade binary classification system** designed to detect and clas
 - Words characteristic of legitimate journalism
 - Example: "reported", "according", "official", "confirmed"
 
+![Feature Importance](outputs/model_explainabilty.png)
+
 ### ☁️ Word Clouds
 
 - **🔴 Fake News Word Cloud** — Distinct vocabulary patterns
 - **🟢 Real News Word Cloud** — Professional journalistic language
+
+![Word Clouds](outputs/world_cloud.png)
 
 ---
 
@@ -117,6 +127,11 @@ task_3/
 ├── README.md                                    # This file
 ├── Fake.csv                                     # Fake news dataset
 ├── True.csv                                     # Real news dataset
+├── outputs/
+│   ├── EDA_overview.png                        # Dataset EDA visualization
+│   ├── fake_news_detector.png                  # Evaluation dashboard
+│   ├── model_explainabilty.png                 # Feature importance
+│   └── world_cloud.png                         # Word clouds
 └── saved_models/
     ├── best_model.joblib                       # Trained classifier
     └── tfidf_vectorizer.joblib                 # TF-IDF vectorizer
@@ -432,7 +447,11 @@ jupyter notebook Task3_Fake_News_Detection_Industrial.ipynb
 ### 4. View Results
 The notebook generates:
 - Console output with model rankings
-- 4-panel evaluation dashboard
+- Saved visualizations in `outputs/` folder:
+  - `EDA_overview.png` — Dataset overview
+  - `fake_news_detector.png` — Evaluation dashboard
+  - `model_explainabilty.png` — Feature importance
+  - `world_cloud.png` — Word clouds
 - Confusion matrices & ROC curves
 - Feature importance charts
 - Word clouds (fake vs real)
